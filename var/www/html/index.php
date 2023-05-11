@@ -9,15 +9,15 @@
     </head>
     <body>
 	<center>
-	<h1>Hello World!</h1>
+	<h1>Drongo Data</h1>
 
 	<?php
-	//$file_path = "~/EEE4113F/*.csv";
+	$file_path = "SampleCSVFile_2kb.csv";
 
 	echo "<html><body><table>\n\n";
   	//echo $data_path;
         // Open a file
-        $file = fopen("SampleCSVFile_2kb.csv", "r");
+        $file = fopen($file_path, "r");
   	//echo $file;
         // Fetching data from csv file row by row
         while (($data = fgetcsv($file)) !== false) {
