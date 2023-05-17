@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	<style>
-	    body {
-  		background-color: lightblue;
-	    }
-	</style>
-    </head>
-    <body>
-	<center>
-	<h1>Drongo Data</h1>
+	<head>
+		<title>NavPage</title>
+		<style>
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  border: 1px solid #e7e7e7;
+		  background-color: #f3f3f3;
+		}
 
-	<?php
-	$file_path = "SampleCSVFile_2kb.csv";
+		li {
+		  float: left;
+		}
 
-	echo "<html><body><table>\n\n";
-  	//echo $data_path;
-        // Open a file
-        $file = fopen($file_path, "r");
-  	//echo $file;
-        // Fetching data from csv file row by row
-        while (($data = fgetcsv($file)) !== false) {
-  
-            // HTML tag for placing in row format
-            echo "<tr>";
-            foreach ($data as $i) {
-                echo "<td>" . htmlspecialchars($i) . "</td>";
-            }
-            echo "</tr> \n";
-        }
-  
-        // Closing the file
-        fclose($file);
-  
-        echo "\n</table></body></html>";
+		li a {
+		  display: block;
+		  color: black;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
 
-	?>
-	</center>
-    </body>
+		li a:hover:not(.active) {
+		  background-color: #ddd;
+		}
+
+		li a.active {
+		  color: white;
+		  background-color: #000000;
+		}
+		</style>
+	</head>
+	<body>
+		<ul>
+		  <li><a href="home.php" target="_top">Current Data</a></li>
+		  <li><a href="images.php" target="_top">Images</a></li>
+		  <li><a href="archive.php" target="_top">Archive</a></li>
+		</ul>
+	</body>
 </html>
-
